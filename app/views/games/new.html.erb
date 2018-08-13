@@ -2,27 +2,31 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-9 col-md-8 col-sm-6 col-xs-6 col-centered">
-      <ul class="letters list-inline">
-        <% @letters.each do |letter| %>
-          <li class="list-group-item"><%= letter %></li>
-        <% end %>
-      </ul>
+    <!-- <div class="col-lg-9 col-md-8 col-sm-6 col-xs-6 col-centered"> -->
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="position">
+          <ul class="letters list-inline align-center">
+            <% @letters.each do |letter| %>
+            <li class="list-group-item"><%= letter %></li>
+            <% end %>
+          </ul>
 
-      <p class="form-prefix">What is the longest word you can find?</p>
+          <p class="form-prefix align-center">What is the longest word you can find?</p>
 
-      <form action="/score" method="POST" class="form-inline">
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <%= hidden_field_tag :letters, @letters %>
-        <div class="input-group input-group">
-          <input type="text" name="word" class="form-control">
-          <span class="input-group-btn">
-            <input type="submit" value="Play" class="btn btn-default">
-          </span>
+          <form action="/score" method="POST" class="form-inline align-center">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <%= hidden_field_tag :letters, @letters %>
+            <div class="input-group input-group">
+              <input type="text" name="word" class="form-control">
+              <span class="input-group-btn">
+                <input type="submit" value="Play" class="btn btn-default">
+              </span>
+            </div>
+          </form>
         </div>
-      </form>
+
+      </div>
     </div>
   </div>
-</div>
 
 
